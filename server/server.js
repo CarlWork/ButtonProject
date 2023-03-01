@@ -11,7 +11,14 @@ app.use(express.static('public'))
 app.get('/', (req,res)=> {
     res.status(200).sendFile(path.join(__dirname, '../public/index.html'))
 })
+app.get('/css', (req,res) => {
+    res.status(200).sendFile(path.join(__dirname, '../public/style.css'))
+})
+app.get('/js', (req,res)=> {
+    res.status(200).sendFile(path.join(__dirname, '../public/main.js'))
+
+})
 
 
 
-app.listen(4004, console.log('App Running on 4004'))
+app.listen(4000, console.log('App Running on 4004'))
