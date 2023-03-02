@@ -1,7 +1,6 @@
 const express = require('express')
 const cors = require('cors')
 const path = require('path')
-// include and initialize the rollbar library with your access token
 var Rollbar = require('rollbar')
 var rollbar = new Rollbar({
   accessToken: '6fc82eb995c5494a84576e98588c42f9',
@@ -9,7 +8,6 @@ var rollbar = new Rollbar({
   captureUnhandledRejections: true,
 })
 
-// record a generic message and send it to Rollbar
 rollbar.log('Hello world!')
 
 
@@ -34,7 +32,7 @@ app.get('/', (req, res) => {
     try {
         nonExistentFunction()
     } catch (error) {
-        rollbar.error(err, req)
+        rollbar.error(err)
     }
 })
 
