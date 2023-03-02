@@ -18,8 +18,8 @@ app.use(cors())
 app.use(express.static('public'))
 
 app.get('/', (req,res)=> {
-    rollbar.log('site visited')
     res.status(200).sendFile(path.join(__dirname, '../public/index.html'))
+    rollbar.log('site visited')
 })
 app.get('/css', (req,res) => {
     res.status(200).sendFile(path.join(__dirname, '../public/style.css'))
@@ -28,13 +28,23 @@ app.get('/js', (req,res)=> {
     res.status(200).sendFile(path.join(__dirname, '../public/main.js'))
 
 })
-app.get('/', (req, res) => {
-    try {
-        nonExistentFunction()
-    } catch (error) {
-        rollbar.error(error)
-    }
-})
+// app.get('/', (req, res) => {
+//     res.status(200)
+// })
+
+app.listen(4000, console.log('App Running on 4000'))
 
 
-app.listen(4000, console.log('App Running on 4004'))
+
+
+
+
+
+
+// app.get('/', (req, res) => {
+//     try {
+//         nonExistentFunction()
+//     } catch (error) {
+//         rollbar.error(error)
+//     }
+// })
