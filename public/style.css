@@ -1,9 +1,35 @@
 * {
-    background-color: yellow;
+    background-color: lime;
     
 }
 
+
+
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+h1 {
+    color: yellow;
+}
+
 #button {
+    height: 420px;
     color: greenyellow;
     background-color: magenta;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+footer {
+    background-color: navajowhite;
+    display: flex;
+     justify-content: center;
+
 }
